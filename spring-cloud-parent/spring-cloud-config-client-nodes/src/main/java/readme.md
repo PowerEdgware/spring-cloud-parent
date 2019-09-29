@@ -32,4 +32,25 @@ private ConfigurableApplicationContext bootstrapServiceContext(
 其中`ConfigServiceBootstrapConfiguration` 会创建外部资源加载的类：`ConfigServicePropertySourceLocator` 此类  
 会从远程服务端获取配置资源。  
 
+BootstrapContext创建完毕后，会先于子Context刷新上下文，其中经过上述步骤，BootstrapConext会创建一些`ApplicationContextInitializer`  
+加入到子上下文中初始化容器中，具体代码还是在`BootstrapApplicationListener`：
+
+```
+	private void apply(ConfigurableApplicationContext context,
+			SpringApplication application, ConfigurableEnvironment environment) {
+		@SuppressWarnings("rawtypes")
+		List<ApplicationContextInitializer> initializers = getOrderedBeansOfType(context,
+				ApplicationContextInitializer.class);
+		application.addInitializers(initializers
+				.toArray(new ApplicationContextInitializer[initializers.size()]));
+		addBootstrapDecryptInitializer(application);
+	}
+
+```
+
+其中有一个`ApplicationContextInitializer`至关重要，实现类为：`PropertySourceBootstrapConfiguration`。他会在  
+子`SpringApplication.run`被调用，调用的是`PropertySourceBootstrapConfiguration.initialize`初始化方法，此方法会  
+在子上下文刷新之前调用`PropertySourceLocator`去获取远程Config-Server的配置。  
+
+
   
