@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: spring-cloud-native-app
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: User
+Implementation-Vendor-Id: com.study
+Build-Jdk: 1.8.0_121
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/spring-cloud-parent/spring-cloud-native-app
+Created-By: Maven Integration for Eclipse
+
