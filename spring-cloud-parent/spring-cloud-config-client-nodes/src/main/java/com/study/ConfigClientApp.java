@@ -38,6 +38,7 @@ public class ConfigClientApp {
 		//ApplicationEnvironmentPreparedEvent
 		//PropertySourceBootstrapConfiguration
 		//AutoServiceRegistrationAutoConfiguration
+		//PropertySourceLocator
 	}
 
 	public static void main(String[] args) {
