@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
-@EnableDiscoveryClient
+//@EnableDiscoveryClient
 @RestController
 public class ConfigClientApp {
 	
@@ -37,6 +37,7 @@ public class ConfigClientApp {
 		//ApplicationListener
 		//ApplicationEnvironmentPreparedEvent
 		//PropertySourceBootstrapConfiguration
+		//AutoServiceRegistrationAutoConfiguration
 	}
 
 	public static void main(String[] args) {
