@@ -26,8 +26,13 @@ bootstrap最先启动，可以用来加载一些资源。
 --ApplicationContextInitializer   
 --ApplicationListener  
 其中一个关键的类： `BootstrapApplicationListener`  用来监听`ApplicationEnvironmentPreparedEvent`  
-接着调用`BootstrapApplicationListener`的事件监听方法
-此监听方法会创建bootstrapContext 并且向`SpringApplication`中添加`AncestorInitializer`并把bootstrapContext传递过去  
+接着调用`BootstrapApplicationListener`的事件监听方法，该方法内部创建bootstrapContext并加载`BootstrapConfiguration`  
+的实现，等待bootstrapContext refresh完成后，会向`SpringApplication`中添加很多`ApplicationContextInitializer` ，其中包括
+从`BootstrapConfiguration`加载过来的：`PropertySourceBootstrapConfiguration`，他也是`ApplicationContextInitializer`  
+子context就是调用`PropertySourceBootstrapConfiguration.initialize`方法，实现外部资源的定位：  
+如config-client获取远程配置资源的调用：`ConfigServicePropertySourceLocator.locate`  
+
+而后把bootstrapContext传递过去  
 以便后续`ApplicationContextInitializer`调用时，利用初始化做一些事情，  
 比如利用`ParentContextApplicationContextInitializer`设置childContext的父context为：bootstrapContext
 

@@ -3,7 +3,6 @@ package com.study;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.Banner.Mode;
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -16,10 +15,15 @@ public class NativeCloudApp {
 
 	void readme() {
 		// BootstrapConfiguration
+		//-PropertySourceBootstrapConfiguration
+		//-ConfigServiceBootstrapConfiguration
+		//-ConfigServicePropertySourceLocator
+		
 		// ApplicationListener
 		// -BootstrapApplicationListener
 		// -ConfigFileApplicationListener
 		//ApplicationContextInitializer
+		//EventPublishingRunListener
 	}
 
 	public static void main(String[] args) {
