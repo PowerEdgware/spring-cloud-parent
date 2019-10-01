@@ -5,5 +5,5 @@ spring:
       config:
          server:
             git:
-               uri: file:///${user.home}/my-config-repos
+               uri: file:///${user.home}/config-repo
                force-pull: true
