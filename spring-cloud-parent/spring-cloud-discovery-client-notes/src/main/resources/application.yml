@@ -1,0 +1,12 @@
+server:
+  port: 0
+spring:
+  application:
+    name: spring-cloud-ds-client
+    
+# 开放 所有Web 管理 Endpoints
+management:
+  endpoints:
+    web:
+      exposure:
+        include : '*'
