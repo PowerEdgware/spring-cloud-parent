@@ -1,0 +1,14 @@
+target:
+   application:
+      name: spirng-cloud-server-app
+      
+server:
+   port: 8081
+   
+spring:
+  application:
+    name: spring-cloud-client-app
+  cloud:
+     zookeeper:
+     connect-string: localhost:2181
+ 

@@ -1,0 +1,11 @@
+    
+server:
+   port: 0
+   
+spring:
+  application:
+    name: spirng-cloud-server-app
+  cloud:
+     zookeeper:
+     connect-string: localhost:2181
+ 
