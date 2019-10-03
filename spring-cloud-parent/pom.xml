@@ -49,5 +49,10 @@
 		<module>spring-cloud-config-client-nodes</module>
 		<module>spring-cloud-native-app</module>
 		<module>spring-cloud-config-server-notes</module>
+		<module>spring-cloud-discovery-client-notes</module>
+		<module>spring-cloud-client-application</module>
+		<module>spring-cloud-server-application</module>
+		<module>spring-cloud-client-app</module>
+		<module>spring-cloud-server-app</module>
 	</modules>
 </project>
