@@ -12,4 +12,6 @@ import java.lang.annotation.Target;
 @Documented
 public @interface RestClient {
 
+	//服务名称
+	String name() default "";
 }
